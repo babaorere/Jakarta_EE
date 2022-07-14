@@ -1,0 +1,195 @@
+
+.- Crear un proyecto con Intellij, con el arquetipo de maven-archetype-quickstart,
+el paquete base es com.app
+
+.- Agregar al pom.xml las siguientes dependencias: hibernate-core-jakarta, mysql-connector-java
+Esta es un ejemplo de como puede quedar el pom.xml, hay que actualizar las versiones de las dependencias
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.app</groupId>
+  <artifactId>Hibernaate-JPA-APP</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>Hibernaate-JPA-APP</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core-jakarta -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core-jakarta</artifactId>
+      <version>5.6.9.Final</version>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.29</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-clean-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-clean-plugin</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-resources-plugin</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.10.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.0.0-M7</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.2.2</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-install-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-install-plugin</artifactId>
+      <version>3.0.0-M1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-deploy-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-deploy-plugin</artifactId>
+      <version>3.0.0-M2</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-site-plugin</artifactId>
+      <version>4.0.0-M2</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-project-info-reports-plugin</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>Hibernaate-JPA-APP</finalName>
+    
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.2.0</version>
+        </plugin>
+
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.2.0</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.10.1</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M7</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>3.0.0-M1</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.0.0-M2</version>
+        </plugin>
+
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>4.0.0-M2</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
+
+
+.- Crear un paquete "com.app.entity" y dentro de este paquete, una clase vacia llamada "Cliente": 
+
+.- Crear una carpeta y archivo: src/main/resources/META-INF/persistence.xml
+
+<?xml version="1.0" encoding="utf-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="3.0">
+    <persistence-unit name="ejemploJPA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.app.entity.Cliente</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jakarta_ee_9?serverTimezone=America/Santiago"/>
+            <property name="jakarta.persistence.jdbc.user" value="root" />
+            <property name="jakarta.persistence.jdbc.password" value="root" />
+        </properties>
+    </persistence-unit>
+</persistence>
+
+
+
+
